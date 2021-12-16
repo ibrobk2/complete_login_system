@@ -1,3 +1,14 @@
+<?php  
+// initializing variables
+$username = "";
+$email    = "";
+$errors = array(); 
+
+    include_once "server.php";
+    include_once "process.php";
+
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +26,12 @@
 <div class="container">
     <h3>Please Login</h3>
         <div class="form justify-centered">
-            <form action="process.php" class="form-group" method="post">
-                <input type="text" placeholder="Enter Username" class="form-control"><br>
-                <input type="password" placeholder="Enter Password" class="form-control"><br>
-                <button class="btn btn-primary form-control">Login</button><br>
+
+            <form action="login.php" class="form-group" method="post">
+            <?php include("errors.php") ; ?>
+                <input type="text" placeholder="Enter Username" class="form-control" name="username"><br>
+                <input type="password" placeholder="Enter Password" class="form-control" name="password"><br>
+                <button class="btn btn-primary form-control" name="user_login">Login</button><br>
             </form>
         </div>
     </div>

@@ -23,9 +23,10 @@ $errors = array();
 <div class="container">
     <h3>Registration Page</h3>
         <div class="form justify-centered">
-       <?php include("errors.php") ; ?>
 
             <form action="register.php" class="form-group" method="post">
+            <?php include("errors.php") ; ?>
+
             <input type="text" placeholder="Enter Full Name" class="form-control" name="fname"><br>
             <input type="text" placeholder="Enter Email" class="form-control" name="email"><br>
 

@@ -1,7 +1,14 @@
 <?php
-include_once "server.php";
-
+ 
+// initializing variables
+$username = "";
+$email    = "";
+$errors = array(); 
+    include_once "server.php";
+    include_once "process.php";
+   
 if(!isset($_SESSION['fname'])){
+    $_SESSION['logError'] = "You Must Login First!";
     header("location: login.php");
 }
 
