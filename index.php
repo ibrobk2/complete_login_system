@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="index.css">
     <style>
         div .x{
-        padding: 120px;
+        padding: 80px;
         font-size:20px
 }
     </style>
@@ -21,8 +21,8 @@
     <?php include "header.php";?>
     
    <div class="container">
-       <div class="btn btn-primary x">Login</div>
-       <div class="btn btn-success x">Register</div>
+       <a href="login.php" class="btn btn-primary x">Login</a>
+       <a href="register.php" class="btn btn-success x">Register</a>
    </div>
     
 </body>
