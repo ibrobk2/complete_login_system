@@ -7,7 +7,7 @@ $errors = array();
     include_once "server.php";
     include_once "process.php";
    
-if(!isset($_SESSION['fname'])){
+if(!isset($_SESSION['success'])){
     $_SESSION['logError'] = "You Must Login First!";
     header("location: login.php");
 }
@@ -23,8 +23,19 @@ if(!isset($_SESSION['fname'])){
     <title>Homepage</title>
 </head>
 <body>
-    <h2>Welcome, <?php echo $_SESSION['fname'];?></h2>
-    <h3><?php  echo $_SESSION['success'];?></h3>
+<?php   
+    if(isset($_POST['logout'])){
+        session_unset();
+        header("location: index.php");
+    }
 
+
+
+?>
+<form action="home.php" method="post">
+    <button name="logout">Logout</button>
+    <h2>Welcome, <?php echo $_SESSION['username'];?></h2>
+    <h3><?php  echo $_SESSION['success'];?></h3>
+</form>
 </body>
 </html>

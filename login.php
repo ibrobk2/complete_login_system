@@ -5,7 +5,7 @@ $email    = "";
 $errors = array(); 
 
     include_once "server.php";
-    include_once "process.php";
+    // include_once "process.php";
 
     
     ?>
@@ -24,11 +24,21 @@ $errors = array();
 <body>
     <?php include "header.php" ;?>
 <div class="container">
+    <?php  
+        if(isset( $_SESSION['logError'])):
+    ?>
+    <h4 style="color:red;"><?php echo  $_SESSION['logError']; ?></h4>
+    <?php 
+    session_unset();
+        endif; ?>
     <h3>Please Login</h3>
         <div class="form justify-centered">
 
             <form action="login.php" class="form-group" method="post">
-            <?php include("errors.php") ; ?>
+            
+            <?php   include("process.php");
+                    include("errors.php"); 
+            ?>
                 <input type="text" placeholder="Enter Username" class="form-control" name="username"><br>
                 <input type="password" placeholder="Enter Password" class="form-control" name="password"><br>
                 <button class="btn btn-primary form-control" name="user_login">Login</button><br>
